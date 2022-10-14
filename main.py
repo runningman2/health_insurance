@@ -9,7 +9,7 @@ from insurance_classes import Insurance_plan
 from helper_functions import *
 
 # define user inputs
-TAX_RATE = 0.35
+TAX_RATE = 0.32
 
 
 
@@ -25,4 +25,4 @@ ppo_object = Insurance_plan(TAX_RATE, 'ppo', **ppo_dict)
 hdhp_object = Insurance_plan(TAX_RATE, 'hdhp', **hdhp_dict)
 hdhp_basic_object = Insurance_plan(TAX_RATE, 'hdhp_basic', **hdhp_basic_dict)
 
-plot_plans([ppo_object, hdhp_object, hdhp_basic_object], 0, 150000, 10)
+plot_plans([ppo_object, hdhp_object, hdhp_basic_object], 0, 120000, 10, 'output')

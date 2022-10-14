@@ -5,7 +5,7 @@ Helper functions
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 
-def plot_plans(plan_objs, min_spend, max_spend, step_spend):
+def plot_plans(plan_objs, min_spend, max_spend, step_spend, path):
     """
     Plot plan cost on y axis versus medical spend on x axis
 
@@ -25,8 +25,11 @@ def plot_plans(plan_objs, min_spend, max_spend, step_spend):
     ax.set_ylabel('Cost ($)')
     ax.set_title('Medical plan comparison')
     ax.legend()
+    # plt.show()
+    plt.savefig('{}/insurance_matplotlib.png'.format(path))
     
     fig2.update_layout(title='Medical plan comparison', xaxis_title='Medical spend',
                        yaxis_title='Cost ($)')
-    fig2.show()
+    # fig2.show()
+    fig2.write_html('{}/insurance_plotly.html'.format(path))
     
